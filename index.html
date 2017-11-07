@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Skippo-Q</title>
+		
+		<link rel="stylesheet" href="css/global.css">
+		<script src="thirdParty/jquery-1.11.4.min.js"></script>
+		<!-- bxSlider -->
+		<script src="thirdParty/bxslider/jquery.bxslider.js"></script>
+		<link href="thirdParty/bxslider/jquery.bxslider.css" rel="stylesheet" />
+
+	</head>
+	<body>
+		<div id="outer-wrapper"><!--outer-wrapper start-->
+			<section id="header">
+				<!-- <header> -->
+					<div id="logo"><a href=" " title="Skippo-Q"><img src="img/logo/logo.png"></a></div>
+					<div id="demo"><a>Request Demo</a></div>
+				<!-- </header> -->
+			</section>
+			<!--section -->
+			<section class="container">
+				<div class="wrapper">
+					<div class="block"><img src="img/sk.png" /></div>
+					<div class="block">
+						<h1>Skippo <span >- No Wait</span></h1>
+					</div>
+				</div>	
+			</section>
+			<!--section -->
+			<section class="container">
+				<div class="wrapper">
+					<h2>How Skippo Works ?</h2>
+					<div class="slider"><!--slider start-->
+						<ul class="bxslider">
+							<li>
+								<a href=" ">
+									<img src="img/other/mobile.png" />
+									<div class="bx-caption">
+										<span>Riya gets added to queue by providing number 11111111111111111111 22222222222222222 3333333333333333333 444444444444</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=" ">
+									<img src="img/other/mobile.png" />
+									<div class="bx-caption">
+										<span>1 Riya gets added to queue by providing number</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=" ">
+									<img src="img/other/mobile.png" />
+									<div class="bx-caption">
+										<span>2 Riya gets added to queue by providing number</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=" ">
+									<img src="img/other/mobile.png" />
+									<div class="bx-caption">
+										<span>3 Riya gets added to queue by providing number</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=" ">
+									<img src="img/other/mobile.png" />
+									<div class="bx-caption">
+										<span>4 Riya gets added to queue by providing number</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<nav class='controls desktop'>
+						    <a id='slider-prev' class='bxPrev circle'>
+						    	<!-- <i class="fa fa-angle-left"></i> -->
+						    </a>
+						    <a id='slider-next' class='bxNext circle'>
+						    	<!-- <i class="fa fa-angle-right"></i> -->
+						    </a>
+						</nav>
+					</div><!--slider closed-->
+				</div>
+			</section>
+
+			<section class="container">
+				<div class="wrapper">
+					<h2>Why You Need Skippo - Q?</h2>
+					<div class="row">
+						<div class="cell" style="background: red; height: 200px"></div>
+						<div class="cell"  style="background: yellow; height: 200px"></div>
+					</div>
+					<div class="row">
+						<div class="cell"   style="background: blue; height: 200px"></div>
+						<div class="cell"  style="background: green; height: 200px"></div>
+					</div>	
+				</div>
+			</section>
+		</div><!--outer-wrapper closed-->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//bxslide
+				// $('.bxslider').bxSlider();
+				// alert("Hello! I am an alert box!!");
+				$('.bxslider').bxSlider({
+				  nextSelector: '#slider-next',
+				  prevSelector: '#slider-prev',
+				  nextText: '<i class="fa fa-angle-right"></i>',
+				  prevText: '<i class="fa fa-angle-left"></i>',
+				  pager: false,
+				  auto: true,
+				 stopAutoOnClick: true
+				});
+			});
+		</script>
+		<script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script>
+	</body>
+</html>
