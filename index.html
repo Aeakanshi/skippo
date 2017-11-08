@@ -12,6 +12,12 @@
 	</head>
 	<body>
 		<div id="outer-wrapper"><!--outer-wrapper start-->
+			<div id="message"></div>
+			<div id="loader">
+				<div id="loader-gif">
+					<img src="img/loader.gif"></div>
+				</div>
+			</div>
 			<section id="header">
 				<!-- <header> -->
 					<div id="logo"><a href=" " title="Skippo-Q"><img src="img/logo/logo.png"></a></div>
@@ -23,7 +29,7 @@
 				<div class="wrapper">
 					<div class="block"><img src="img/sk.png" /></div>
 					<div class="block">
-						<h1>Skippo <span >- No Wait</span></h1>
+						<h1>Skippo <span >- Skip Queue</span></h1>
 					</div>
 				</div>	
 			</section>
@@ -90,16 +96,81 @@
 				<div class="wrapper">
 					<h2>Why You Need Skippo - Q?</h2>
 					<div class="row">
-						<div class="cell" style="background: red; height: 200px"></div>
-						<div class="cell"  style="background: yellow; height: 200px"></div>
+						<div class="col">
+							<div class="cell"><img src="img/other/satisfaction.png" /></div>
+							<div class="cell">
+								<h3>Customer Satisfaction</h3>
+								<p>Free your customer from standing in queue and frustated</p>
+							</div>
+						</div>
+						<div class="col">
+							<div class="cell"><img src="img/other/skills.png" /></div>
+							<div class="cell">
+								<h3>Customer Satisfaction</h3>
+								<p>Free your customer from standing in queue and frustated</p>
+							</div>
+						</div>
 					</div>
 					<div class="row">
-						<div class="cell"   style="background: blue; height: 200px"></div>
-						<div class="cell"  style="background: green; height: 200px"></div>
+						<div class="col">
+							<div class="cell"><img src="img/other/customer-service.png" /></div>
+							<div class="cell">
+								<h3>Customer Satisfaction</h3>
+								<p>Free your customer from standing in queue and frustated</p>
+							</div>
+						</div>
+						<div class="col">
+							<div class="cell"><img src="img/other/multple screen .png" /></div>
+							<div class="cell">
+								<h3>Customer Satisfaction</h3>
+								<p>Free your customer from standing in queue and frustated</p>
+							</div>
+						</div>
 					</div>	
 				</div>
 			</section>
+			<!--section -->
+			<section class="container">
+				<div class="wrapper sign-in">
+					<h2>Strat Using Skippo - Q</h2>
+					<div id="sign-in">
+						<!-- This form is submited to the google sheet's script -->
+						<form id='gform' method='POST' action='https://script.google.com/macros/s/AKfycbwkZkO9GuI5GCwZdfq4qSuHfZU10mPbasXtaJV6uB03I4eT9qo/exec'>
+							<input type="text" name='name' placeholder="Name" required="">
+							<input type="text" name='venue' placeholder="Venue" required="">
+							<input type="tel" name='phone-num' placeholder="Phone Number" maxlength="10" required="">
+							<input type="submit" value="Submit">
+						</form>
+					</div>
+				</div>	
+			</section>
 		</div><!--outer-wrapper closed-->
+		<footer>
+			<div class="wrapper">
+				<div class="block">
+					<h3>Company</h3>
+					<ul>
+						<!-- <li><a href="#">Company</a></li> -->
+						<li><a href="#">About</a></li>
+						<li><a href="#">Team</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">FAQ</a></li>
+					</ul>
+				</div>
+				<div class="block">
+					<h3>Policy</h3>
+					<ul>
+						<!-- <li><a href="#">Policy</a></li> -->
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms & Conditions</a></li>
+					</ul>
+				</div>
+				<div class="block">
+					<button id="button" type="submit">Request Demo</button>
+				</div>	
+			</div>
+		</footer>
 
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -116,7 +187,79 @@
 				 stopAutoOnClick: true
 				});
 			});
+
+
+		// form script
+			function getFormData() {
+			  	var elements = document.getElementById("gform").elements;
+			  	var fields = Object.keys(elements).map(function(k) {
+
+			    if(elements[k].name !== undefined) {
+			      return elements[k].name;
+			    }else if(elements[k].length > 0){
+			      return elements[k].item(0).name;
+			    }
+			  }).filter(function(item, pos, self) {
+			    return self.indexOf(item) == pos && item;
+			  });
+			  var data = {};
+			  fields.forEach(function(k){
+			    data[k] = elements[k].value;
+			    var str = ""; // declare empty string outside of loop to allow
+			                  // it to be appended to for each item in the loop
+			    if(elements[k].type === "checkbox"){ // special case for Edge's html collection
+			      str = str + elements[k].checked + ", "; // take the string and append
+			                                              // the current checked value to
+			                                              // the end of it, along with
+			                                              // a comma and a space
+			      data[k] = str.slice(0, -2); // remove the last comma and space
+			                                  // from the  string to make the output
+			                                  // prettier in the spreadsheet
+			    }else if(elements[k].length){
+			      for(var i = 0; i < elements[k].length; i++){
+			        if(elements[k].item(i).checked){
+			          str = str + elements[k].item(i).value + ", "; // same as above
+			          data[k] = str.slice(0, -2);
+			        }
+			      }
+			    }
+			  });
+				document.getElementById("loader").style.display = "block";
+			  return data;
+			}
+			function handleFormSubmit(event) {
+				event.preventDefault();
+
+				var data = getFormData();
+				var url = event.target.action;
+				var xhr = new XMLHttpRequest();
+
+				xhr.open('POST', url);
+
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+				xhr.onreadystatechange = function() {
+						document.getElementById("loader").style.display = "none";
+				    var message = document.getElementById('message');
+				    message.style.display = 'block';
+
+				    message.innerHTML = 'Thank you for the information. Someone from our team will contact in 24 hours.';
+				    return;
+				};
+
+				var encoded = Object.keys(data).map(function(k) {
+				    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+				}).join('&')
+				xhr.send(encoded);
+			}
+
+			function loaded() {
+				var form = document.getElementById('gform');
+				form.addEventListener("submit", handleFormSubmit, false);
+			};
+
+			document.addEventListener('DOMContentLoaded', loaded, false);
 		</script>
-		<script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script>
+		<!-- <script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script> -->
 	</body>
 </html>

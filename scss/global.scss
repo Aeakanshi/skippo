@@ -107,7 +107,10 @@ label
 select,input
 {
     color:#000;
-	background-color: transparent;
+	/*background-color: transparent;*/
+}
+input[type=submit] {
+    cursor: pointer;
 }
 form
 {
@@ -145,6 +148,67 @@ h4 {
     list-style-type:disc;
     margin:3px 0 0 15px;
     list-style-position:outside;
+}
+
+#message {
+    display: none;
+    padding: .5em 1em;
+    background: #000;
+    color: white;
+    text-align: center;
+    border-bottom: solid 1px #333;
+    font-size: 18px;
+    -webkit-animation: fadein 1s;
+   -moz-animation: fadein 1s;
+   -ms-animation: fadein 1s;
+   -o-animation: fadein 1s;
+   animation: fadein 1s;
+
+}
+/* loader styles */
+
+#loader {
+    width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+    display: none;
+    background-color: rgba(255,255,255,0.5);
+}
+
+#loader-gif {
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-top: 20%;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 section {
@@ -189,7 +253,7 @@ section {
     clear:both;
 }
 
-#header:after {
+#header:after, footer:after {
     content: "";
     display: block;
     clear: both;
@@ -197,9 +261,9 @@ section {
 }
 /*for scrolling effect*/
 
-#header.nav-up {
+/*#header.nav-up {
     top: -101px;
-}
+}*/
 
 /*#header header{
     width: 92%;
@@ -239,7 +303,7 @@ section {
     /*border-bottom: 1px solid #dce0e0;*/
     box-shadow: 0 4px 10px rgba(80, 80, 80, 0.39);
 }
-.container .wrapper {
+.wrapper {
     /*width:90%;*/
     width:80%;
     margin: 0 auto;
@@ -275,7 +339,7 @@ section {
 }
 
 .wrapper .block h1:before {
-    content: 'Skippo - No Wait';
+    content: 'Skippo - Skip Queue';
     position: absolute;
     overflow: hidden;
     max-width: 10em;
@@ -414,12 +478,117 @@ section {
 
 /*--cells--*/
 
-.wrapper .row .cell {
-    width:49%;
-     margin-bottom: 2%;
+.wrapper .row .col {
+    width: 49%;
+    margin-bottom: 2%;
     float: left;
+    display: table;
+    border: 1px solid #dce0e0;
+    box-shadow: 0 1px 10px rgba(80, 80, 80, 0.39);
+    vertical-align: middle;
+    padding: 1em;
+    text-align: center;
+    min-height: 200px;
 }
-.wrapper .row .cell:nth-child(2)  {
+.wrapper .row .col:nth-child(2)  {
    float: right;
 
+}
+.wrapper .row .col .cell {
+    display: table-cell;
+    vertical-align: middle;
+    color:$grey;
+}
+.wrapper .row .col .cell img {
+    width: 80%;
+    min-width: 80px;
+}
+.wrapper .row .col .cell h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: .5em;
+}
+/*--sing--*/
+.wrapper.sign-up {
+   
+}
+#sign-in
+{
+    width: 42%;
+    padding: 1em;
+    margin:0 auto;
+    border-radius: 0.5em;
+}
+
+/*#input-title
+{
+    font-size: 1.3em;
+    text-align: center;
+}*/
+
+#sign-in input
+{
+    width: 100%;
+    padding: 0.5em 1em;
+    /*border-radius: 0.5em;*/
+    border: 1px solid $blue;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+
+#gform input:last-child
+{
+    background-color: $blue;
+    color: white;
+    border-style: none;
+}
+
+/*#sign-in div
+{
+    margin: 1em;
+}
+*/
+/*--FOOTER--*/
+footer {
+    width: 100%;
+    background: grey;
+    padding: 5em 0;
+    position: relative;
+}
+footer .wrapper .block  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: .5em;
+    color: $white;
+}
+footer .wrapper .block {
+    width: (100%/3);
+    /*height: 200px;*/
+    float: left;
+    position: relative;
+}
+footer .wrapper .block li {
+    /*text-align: center;*/
+}
+footer .wrapper .block li a {
+    color: $white;
+    position: relative;
+    line-height: 2em;
+}
+/*footer .wrapper .block li:first-child {
+    font-weight: bold;
+    line-height: 3em;
+}*/
+footer .wrapper .block:last-child {
+    text-align: center;
+}
+button {
+    font-size: 16px;
+    background: $blue;
+    border-radius: 0;
+    margin: 5em 0;
+    color: $white;
+    padding: 1em 2em;
+    border: none;
 }
