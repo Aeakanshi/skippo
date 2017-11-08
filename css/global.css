@@ -375,7 +375,7 @@ section {
   font-size: 16px;
   text-align: left;
   padding: 1em;
-  max-width: 85%;
+  max-width: 71%;
   letter-spacing: 1px;
   position: absolute;
   font-weight: 500;
@@ -473,7 +473,8 @@ section {
   /*border-radius: 0.5em;*/
   border: 1px solid #3f4f88;
   margin-bottom: 1em;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  color: #4a4a4a; }
 
 #gform input:last-child {
   background-color: #3f4f88;
