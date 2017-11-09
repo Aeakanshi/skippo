@@ -334,7 +334,7 @@ section {
     transition: all 0.5s ease-in-out;
 }
 .wrapper .block img:hover {
-    width: 85%;
+    width: 81%;
 }
 .wrapper .block h1 {
    /* padding-top: 3.3em;
@@ -675,17 +675,6 @@ button {
     -moz-animation-name: fadeInLeft;
     -o-animation-name: fadeInLeft;
     animation-name: fadeInLeft;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration:  1s;
-    -o-animation-duration: 1s;
-    animation-duration:  1s;
-    -webkit-animation-delay: 0.2s;
-    -moz-animation-delay: 0.2s;
-    animation-delay:0.2s;
 }
 
 /*--right--*/
@@ -743,17 +732,6 @@ button {
     -moz-animation-name: fadeInRight;
     -o-animation-name: fadeInRight;
     animation-name: fadeInRight;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration:  1s;
-    -o-animation-duration: 1s;
-    animation-duration:  1s;
-    -webkit-animation-delay: 0.2s;
-    -moz-animation-delay: 0.2s;
-    animation-delay:0.2s;
 }
 
 
@@ -811,18 +789,7 @@ button {
     -moz-animation-name: fadeInDown;
     -o-animation-name: fadeInDown;
     animation-name: fadeInDown;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration:  1s;
-    -o-animation-duration: 1s;
-    animation-duration:  1s;
-    -webkit-animation-delay: 0.2s;
-    -moz-animation-delay: 0.2s;
-    animation-delay:0.2s;
-
+   
 }
 
 /*--Up--*/
@@ -879,16 +846,69 @@ button {
     -moz-animation-name: fadeInUp;
     -o-animation-name: fadeInUp;
     animation-name: fadeInUp;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration:  1s;
-    -o-animation-duration: 1s;
-    animation-duration:  1s;
-    -webkit-animation-delay: 0.2s;
-    -moz-animation-delay: 0.2s;
-    animation-delay:0.2s;
+}
 
+/* show objects being animated */
+.animatable {
+  
+  /* initially hide animatable objects */
+  visibility: hidden;
+  
+  /* initially pause animatable objects their animations */
+  -webkit-animation-play-state: paused;   
+  -moz-animation-play-state: paused;     
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;   
+  animation-play-state: paused; 
+}
+
+.animated {
+  /*visibility: visible;
+  */
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+
+   -webkit-animation-delay: 0.2s;
+   -moz-animation-delay: 0.2s;
+   animation-delay:0.2s;
+}
+.animated.in-up {
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+ }   
+ .animated.in-down {
+    -webkit-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -o-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+ }  
+  
+  .animated.in-right {
+    -webkit-animation-name: fadeInRight;
+    -moz-animation-name: fadeInRight;
+    -o-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+ }  
+.animated.in-left {
+    -webkit-animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    -o-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
 }

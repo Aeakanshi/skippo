@@ -96,14 +96,14 @@
 				<div class="wrapper">
 					<h2>Why You Need Skippo - Q?</h2>
 					<div class="row">
-						<div class="col in-left">
+						<div class="col animatable in-left">
 							<div class="cell"><img src="img/other/satisfaction.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
 								<p>Free your customer from standing in queue and frustated</p>
 							</div>
 						</div>
-						<div class="col in-down">
+						<div class="col animatable in-down">
 							<div class="cell"><img src="img/other/skills.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
@@ -112,14 +112,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col in-right">
+						<div class="col animatable in-right">
 							<div class="cell"><img src="img/other/customer-service.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
 								<p>Free your customer from standing in queue and frustated</p>
 							</div>
 						</div>
-						<div class="col in-up">
+						<div class="col animatable in-up">
 							<div class="cell"><img src="img/other/multple screen .png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
@@ -186,7 +186,36 @@
 				  auto: false,
 				 stopAutoOnClick: true
 				});
-			});
+
+
+
+
+				 // Function which adds the 'animated' class to any '.animatable' in view
+				  var doAnimations = function() {
+				    
+				    // Calc current offset and get all animatables
+				    var offset = $(window).scrollTop() + $(window).height(),
+				        $animatables = $('.animatable');
+				    
+				    // Unbind scroll handler if we have no animatables
+				    if ($animatables.size() == 0) {
+				      $(window).off('scroll', doAnimations);
+				    }
+				    
+				    // Check all animatables and animate them if necessary
+						$animatables.each(function(i) {
+				       var $animatable = $(this);
+							if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+				        $animatable.removeClass('animatable').addClass('animated');
+							}
+				    });
+
+					};
+				  
+				  // Hook doAnimations on scroll, and trigger a scroll
+					$(window).on('scroll', doAnimations);
+				  $(window).trigger('scroll');
+				});
 
 
 		// form script
@@ -259,7 +288,13 @@
 			};
 
 			document.addEventListener('DOMContentLoaded', loaded, false);
-		</script>
+	</script>
+	<script type="text/javascript">
+			// --> Check https://codepen.io/bramus/pen/vKpjNP
+
+	</script>
+
+
 		<!-- <script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script> -->
 	</body>
 </html>
