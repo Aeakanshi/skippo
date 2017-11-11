@@ -534,8 +534,9 @@ footer {
   position: relative; }
 
 footer .wrapper .block h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
+  letter-spacing: 1px;
   margin-bottom: .5em;
   color: #fff; }
 
