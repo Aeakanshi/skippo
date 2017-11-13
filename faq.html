@@ -30,27 +30,27 @@
 				<div class="wrapper">
 					<ul>
 						<li class="ur-query">
-							<div class="question">What will be the price if I don't want to use Admin Panel ? </div>
+							<div  class="question"><span>What will be the price if I don't want to use Admin Panel ?</span> <span class="arrow-down"></span><span class="arrow-up"></span></div>
 							<div class="answer">Price remains the same. If you don't have any ecommerce stores based on this platform, you can always use when products are not displayed on the front end or the Magento admin panel after your import. The weight of a product; just use 1 if you don't need it price.</div>
 						</li>
 						<li class="ur-query">
-							<div class="question">What will be the price if I don't want to use Admin Panel ? </div>
+							<div  class="question"><span>What will be the price if I don't want to use Admin Panel ?</span> <span class="arrow-down"></span><span class="arrow-up"></span></div>
 							<div class="answer">Price remains the same. If you don't have any ecommerce stores based on this platform, you can always use when products are not displayed on the front end or the Magento admin panel after your import. The weight of a product; just use 1 if you don't need it price.</div>
 						</li>
 						<li class="ur-query">
-							<div class="question">What will be the price if I don't want to use Admin Panel ? </div>
+							<div  class="question"><span>What will be the price if I don't want to use Admin Panel ?</span> <span class="arrow-down"></span><span class="arrow-up"></span></div>
 							<div class="answer">Price remains the same. If you don't have any ecommerce stores based on this platform, you can always use when products are not displayed on the front end or the Magento admin panel after your import. The weight of a product; just use 1 if you don't need it price.</div>
 						</li>
 						<li class="ur-query">
-							<div class="question">What will be the price if I don't want to use Admin Panel ? </div>
+							<div  class="question"><span>What will be the price if I don't want to use Admin Panel ?</span> <span class="arrow-down"></span><span class="arrow-up"></span></div>
 							<div class="answer">Price remains the same. If you don't have any ecommerce stores based on this platform, you can always use when products are not displayed on the front end or the Magento admin panel after your import. The weight of a product; just use 1 if you don't need it price.</div>
 						</li>
 						<li class="ur-query">
-							<div class="question">What will be the price if I don't want to use Admin Panel ? </div>
+							<div  class="question"><span>What will be the price if I don't want to use Admin Panel ?</span> <span class="arrow-down"></span><span class="arrow-up"></span></div>
 							<div class="answer">Price remains the same. If you don't have any ecommerce stores based on this platform, you can always use when products are not displayed on the front end or the Magento admin panel after your import. The weight of a product; just use 1 if you don't need it price.</div>
 						</li>
 						<li class="ur-query">
-							<div class="question">What will be the price if I don't want to use Admin Panel ? </div>
+							<div  class="question"><span>What will be the price if I don't want to use Admin Panel ?</span> <span class="arrow-down"></span><span class="arrow-up"></span></div>
 							<div class="answer">Price remains the same. If you don't have any ecommerce stores based on this platform, you can always use when products are not displayed on the front end or the Magento admin panel after your import. The weight of a product; just use 1 if you don't need it price.</div>
 						</li>
 					</ul>
@@ -87,20 +87,24 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-				//bxslide
-				// $('.bxslider').bxSlider();
-				// alert("Hello! I am an alert box!!");
-				$('.bxslider').bxSlider({
-				  nextSelector: '#slider-next',
-				  prevSelector: '#slider-prev',
-				  nextText: '<i class="fa fa-angle-right"></i>',
-				  prevText: '<i class="fa fa-angle-left"></i>',
-				  pager: false,
-				  auto: false,
-				 stopAutoOnClick: true
+				$(".answer").hide();
+				$(".arrow-up").hide();
+				$( ".question" ).click(function() {
+				  $(this).next(".answer").slideToggle();
+				  $(this).find(".arrow-down, .arrow-up").toggle();
 				});
+
+
+// $('#worksfoot img').each( function(index) {
+//     $(this).click( function() {
+//         $('#entrycontainer').animate({
+//             marginLeft: 100*index
+//         },500);
+//     });
+// });
+
 			});
 		</script>
-		<!-- <script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script> -->
+		
 	</body>
 </html>

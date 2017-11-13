@@ -1040,16 +1040,47 @@ button {
 /*--FAQ--*/
 li.ur-query {
     list-style: decimal;
-    font-size: 1.25em;
-    padding: 1em 0;
-    max-width: 1000px;
+    font-size: 1.10em;
+    padding: 1em 0 0 0;
+    max-width: 950px;
+    cursor: pointer;
+    position: relative;
 }
 li .question {
    
     font-weight: 600;
     margin: 1em 0;
+    position: relative;
 
 }
 /*li .answer {
     font-size: 1.35em;
+}*/
+/*--Arrow--*/
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #101010;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(16, 16, 16, 0.6);
+}
+
+.question .arrow-down , .question .arrow-up  {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+/*.question .arrow-up  {
+    position: absolute;
+    top: 5px;
+    right: 33%;
+    margin-left: 50px;
 }*/
