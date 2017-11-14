@@ -133,7 +133,7 @@
 						<ul class="bxslider">
 							<li style="background: red;">
 								<a href=" ">
-									<img src="img/other/mobile.png" />
+									<img src="img/other/learning-center-img6.jpg" style="height:165px; width:100%;" />
 								<!-- 	<video width="100%" controls>
   <source src="img/video/00-Getting-Setup.mp4" type="video/mp4">
   <source src="mov_bbb.ogg" type="video/ogg">
@@ -141,9 +141,9 @@
 </video> -->
 								</a>
 							</li>
-							<li style="background: yellow;">
+							<li style="background: yellow;" >
 								<a href=" ">
-									<img src="img/other/mobile.png" />
+									<img src="img/other/learning-center-img6.jpg" style="height:165px; width:100%;"" />
 									<div class="bx-caption">
 										<span>Disha Bhatnagar</span>
 									</div>
@@ -151,7 +151,7 @@
 							</li>
 							<li style="background: green;">
 								<a href=" ">
-									<img src="img/other/mobile.png" />
+									<img src="img/other/learning-center-img6.jpg" style="height:165px; width:100%;"" />
 									<div class="bx-caption">
 										<span>Disha Bhatnagar</span>
 									</div>
@@ -159,15 +159,15 @@
 							</li>
 							<li style=";">
 								<a href="background: orange;">
-									<img src="img/other/mobile.png" />
+									<img src="img/other/learning-center-img6.jpg" style="height:165px; width:100%;"" />
 									<div class="bx-caption">
 										<span>Disha Bhatnagar</span>
 									</div>
 								</a>
 							</li>
-							<li style="width: 400px !important;">
+							<li>
 								<a href=" ">
-									<img src="img/other/mobile.png" />
+									<img src="img/other/learning-center-img6.jpg" style="height:165px; width:100%;"" />
 									<div class="bx-caption">
 										<span>Disha Bhatnagar</span>
 									</div>
@@ -186,6 +186,7 @@
 				</div>
 			</section>
 		</div><!--outer-wrapper closed-->
+	
 		<footer>
 			<div class="wrapper">
 				<div class="block">
@@ -213,6 +214,11 @@
 			</div>
 		</footer>
 
+		<!--ModelBox-->
+		<section id="modelbox">
+			
+		</section>
+
 		<script type="text/javascript">
 			$(document).ready(function(){
 				//bxslide
@@ -221,12 +227,20 @@
 				$('.bxslider').bxSlider({
 				  nextSelector: '#slider-next',
 				  prevSelector: '#slider-prev',
-				  nextText: '<i class="fa fa-angle-right"></i>',
-				  prevText: '<i class="fa fa-angle-left"></i>',
+				  nextText: '<div class="arrow-up"></div>',
+				  prevText: '<div class="arrow-down"></div>',
 				  pager: false,
 				  auto: false,
 				 stopAutoOnClick: true
 				});
+
+				
+				
+ 
+				$( ".slider .bx-wrapper li img" ).click(function() {
+				 	$(this).parents("#modelbox").show();
+				});
+				
 			});
 		</script>
 		<!-- <script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script> -->
