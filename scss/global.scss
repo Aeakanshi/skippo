@@ -683,7 +683,7 @@ button {
 
 /** fadeInLeft **/
 
-@-webkit-keyframes fadeInLeft {
+/*@-webkit-keyframes fadeInLeft {
     from {
         opacity:0;
         -webkit-transform: translatex(-100px);
@@ -736,11 +736,11 @@ button {
     -moz-animation-name: fadeInLeft;
     -o-animation-name: fadeInLeft;
     animation-name: fadeInLeft;
-}
+}*/
 
 /*--right--*/
 
-@-webkit-keyframes fadeInRight {
+/*@-webkit-keyframes fadeInRight {
     from {
         opacity:0;
         -webkit-transform: translatex(-100px);
@@ -794,10 +794,10 @@ button {
     -o-animation-name: fadeInRight;
     animation-name: fadeInRight;
 }
-
+*/
 
 /*--down--*/
-@-webkit-keyframes fadeInDown {
+/*@-webkit-keyframes fadeInDown {
     from {
         opacity:0;
         -webkit-transform: translatex(100px);
@@ -851,10 +851,10 @@ button {
     -o-animation-name: fadeInDown;
     animation-name: fadeInDown;
    
-}
+}*/
 
 /*--Up--*/
-@-webkit-keyframes fadeInUp {
+/*@-webkit-keyframes fadeInUp {
     from {
         opacity:0;
         -webkit-transform: translatex(100px);
@@ -908,24 +908,18 @@ button {
     -o-animation-name: fadeInUp;
     animation-name: fadeInUp;
 }
-
+*/
 /* show objects being animated */
-.animatable {
-  
-  /* initially hide animatable objects */
+/*.animatable {
   visibility: hidden;
-  
-  /* initially pause animatable objects their animations */
   -webkit-animation-play-state: paused;   
   -moz-animation-play-state: paused;     
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;   
   animation-play-state: paused; 
-}
+}*/
 
-.animated {
-  /*visibility: visible;
-  */
+/*.animated {
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   -ms-animation-fill-mode: both;
@@ -972,7 +966,7 @@ button {
     -moz-animation-name: fadeInLeft;
     -o-animation-name: fadeInLeft;
     animation-name: fadeInLeft;
-}
+}*/
 
 /*--About us*/
 .container .banner {
