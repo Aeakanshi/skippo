@@ -9,6 +9,9 @@
 		<script src="thirdParty/bxslider/jquery.bxslider.js"></script>
 		<link href="thirdParty/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
+		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
 	</head>
 	<body>
 		<div id="outer-wrapper"><!--outer-wrapper start-->
@@ -27,7 +30,7 @@
 			<!--section -->
 			<section class="container">
 				<div class="wrapper" id="banner">
-					<div class="block"><img src="img/sk.png" /></div>
+					<div class="block" data-aos="zoom-in"><img src="img/sk.png" /></div>
 					<div class="block">
 						<h1>Skippo <span >- Skip Queue</span></h1>
 					</div>
@@ -96,14 +99,14 @@
 				<div class="wrapper">
 					<h2>Why You Need Skippo - Q?</h2>
 					<div class="row">
-						<div class="col animatable in-left">
+						<div class="col" data-aos="fade-up-right">
 							<div class="cell"><img src="img/other/satisfaction.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
 								<p>Free your customer from standing in queue and frustated</p>
 							</div>
 						</div>
-						<div class="col animatable in-down">
+						<div class="col" data-aos="fade-up-left">
 							<div class="cell"><img src="img/other/skills.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
@@ -112,14 +115,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col animatable in-right">
+						<div class="col" data-aos="fade-down-right">
 							<div class="cell"><img src="img/other/customer-service.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
 								<p>Free your customer from standing in queue and frustated</p>
 							</div>
 						</div>
-						<div class="col animatable in-up">
+						<div class="col" data-aos="fade-down-left">
 							<div class="cell"><img src="img/other/multple-screen.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
@@ -131,7 +134,7 @@
 			</section>
 			<!--section -->
 			<section class="container">
-				<div class="wrapper sign-in">
+				<div class="wrapper sign-in" data-aos="slide-up">
 					<h2>Start Using Skippo - Q</h2>
 					<div id="sign-in">
 						<!-- This form is submited to the google sheet's script -->
@@ -187,8 +190,10 @@
 				 stopAutoOnClick: true
 				});
 
-
-
+				// for aos animation effects
+				AOS.init({
+        duration: 1000
+    })  ;
 
 				 // Function which adds the 'animated' class to any '.animatable' in view
 				  var doAnimations = function() {
