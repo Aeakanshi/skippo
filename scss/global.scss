@@ -12,7 +12,8 @@ $max-width:720px;
 @media only screen and (max-width: $max-width) {
     @import "hamburger";
 }*/
-$blue: #3f4f88;
+$blue: #3f4f88; 
+/*linear-gradient(#0389ff 15%, #0dd3ff 100%, #0dd3ff 100%, #0389ff 15%);*/
 $white:#fff;
 $avenirl: AvenirLTStd-Book;
 $grey:#4a4a4a;
@@ -363,8 +364,15 @@ section {
     width:50%;
     float: left;
 }
-.wrapper .block:first-child {
-    /*text-align: center;*/
+.wrapper .block:nth-child(2) {
+    text-align: center;
+}
+.wrapper .block .quote{
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 44px;
+    color: #888585;
+    letter-spacing: 1px;
 }
 .wrapper .block img {
     width:80%;
@@ -379,7 +387,7 @@ section {
 .wrapper .block h1 {
    /* padding-top: 3.3em;
     font-size: 2.5em;*/
-    padding-top: 4.7em;
+    padding-top: 4em;
     font-size: 2em;
     font-weight: 800;
     font-family: $avenirl;
@@ -389,10 +397,10 @@ section {
 }
 
 .wrapper .block h1:before {
-    content: 'Skippo - Skip Queue';
+    content: 'Manage Queues Efficienty';
     position: absolute;
     overflow: hidden;
-    max-width: 10em;
+    max-width: 15em;
     color:  $grey;
     white-space: nowrap;
     animation: loading 5s linear;
@@ -652,9 +660,12 @@ footer .wrapper .block h3:after {
 
 footer .wrapper .block {
     width: (100%/3);
-    /*height: 200px;*/
+     text-align: left;
     float: left;
     position: relative;
+}
+footer .wrapper .block:nth-child(2) {
+    text-align: left;
 }
 footer .wrapper .block li {
     /*text-align: center;*/
@@ -671,6 +682,7 @@ footer .wrapper .block li a {
 footer .wrapper .block:last-child {
     text-align: center;
 }
+
 button {
     font-size: 16px;
     background: $blue;
