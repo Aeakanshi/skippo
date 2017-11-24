@@ -1,0 +1,18 @@
+body .mobile {
+  display: block; }
+
+body .desktop {
+  display: none; }
+
+body .container #banner.wrapper .block {
+  width: 100% !important;
+  float: none !important;
+  text-align: center !important; }
+
+#outer-wrapper .wrapper .block h1 {
+  padding-top: 2em; }
+
+#outer-wrapper .container #banner {
+  height: inherit; }
+
+/*# sourceMappingURL=mobile.css.map */

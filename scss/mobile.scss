@@ -1,0 +1,47 @@
+body .mobile{display:block}
+body .desktop{display:none}
+
+body .container #banner.wrapper .block {
+    width: 100% !important;
+    float: none !important;
+    text-align: center !important;
+}
+#outer-wrapper .wrapper .block img {
+    width: 100%;
+}
+#outer-wrapper .wrapper .block h1 {
+    padding-top: 2em;
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+#outer-wrapper .container #banner {
+    height: inherit;
+}
+#outer-wrapper .wrapper .block h1 {
+     white-space: inherit;
+     color:  $grey;
+}
+#outer-wrapper .wrapper .block h1:before  {
+    content: " ";
+    position: relative;
+}
+body .footer .wrapper .block {
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin-bottom: 3em;
+    position: relative;
+}
+body .footer .wrapper .block h3:after {
+    left: 39%;
+}
+#outer-wrapper .wrapper .row .col {
+    width: 100%;
+    float: none;
+}
+#outer-wrapper #sign-in {
+    width: 100%;
+}
+#outer-wrapper .container .wrapper h2 {
+    font-size: 1.5em;
+}

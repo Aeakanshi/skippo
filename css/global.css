@@ -1,10 +1,56 @@
 /*________________ VARIBLES________________ */
+/*linear-gradient(#0389ff 15%, #0dd3ff 100%, #0dd3ff 100%, #0389ff 15%);*/
+@media only screen and (max-width: 720px) {
+  body .mobile {
+    display: block; }
+
+  body .desktop {
+    display: none; }
+
+  body .container #banner.wrapper .block {
+    width: 100% !important;
+    float: none !important;
+    text-align: center !important; }
+
+  #outer-wrapper .wrapper .block img {
+    width: 100%; }
+
+  #outer-wrapper .wrapper .block h1 {
+    padding-top: 2em;
+    font-size: 1.5em;
+    line-height: 1.5; }
+
+  #outer-wrapper .container #banner {
+    height: inherit; }
+
+  #outer-wrapper .wrapper .block h1 {
+    white-space: inherit;
+    color: #4a4a4a; }
+
+  #outer-wrapper .wrapper .block h1:before {
+    content: " ";
+    position: relative; }
+
+  body .footer .wrapper .block {
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin-bottom: 3em;
+    position: relative; }
+
+  body .footer .wrapper .block h3:after {
+    left: 39%; }
+
+  #outer-wrapper .wrapper .row .col {
+    width: 100%;
+    float: none; }
+
+  #outer-wrapper #sign-in {
+    width: 100%; }
+
+  #outer-wrapper .container .wrapper h2 {
+    font-size: 1.5em; } }
 /*@import "tab";
-
-
-@media only screen and (max-width: $max-width) {
-    @import "mobile";
-}
 @media only screen and (max-width: $max-width) {
     @import "hamburger";
 }*/
@@ -313,7 +359,7 @@ section {
   /*background: red;*/
   position: relative; }
 
-.wrapper:after {
+.wrapper:after, .block:after {
   content: "";
   display: block;
   clear: both;
@@ -352,7 +398,8 @@ section {
   font-family: AvenirLTStd-Book;
   color: rgba(107, 99, 99, 0.3);
   text-align: center;
-  position: relative; }
+  position: relative;
+  white-space: nowrap; }
 
 .wrapper .block h1:before {
   content: 'Manage Queues Efficienty';
@@ -360,7 +407,6 @@ section {
   overflow: hidden;
   max-width: 15em;
   color: #4a4a4a;
-  white-space: nowrap;
   animation: loading 5s linear; }
 
 @keyframes loading {
@@ -568,23 +614,23 @@ section {
 }
 */
 /*--FOOTER--*/
-footer {
+.footer {
   width: 100%;
   background: grey;
   padding: 5em 0 2em 0;
   position: relative; }
 
-footer .wrapper {
+.footer .wrapper {
   padding: 0; }
 
-footer .wrapper .block h3 {
+.footer .wrapper .block h3 {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: .5em;
   color: #fff; }
 
-footer .wrapper .block h3:after {
+.footer .wrapper .block h3:after {
   width: 58px;
   height: 5px;
   left: 0;
@@ -593,19 +639,22 @@ footer .wrapper .block h3:after {
   background: #f1e980;
   top: -20px; }
 
-footer .wrapper .block {
+.footer .wrapper .block h3:nth-child(2) {
+  background-color: red; }
+
+.footer .wrapper .block {
   width: 33.33333%;
   text-align: left;
   float: left;
   position: relative; }
 
-footer .wrapper .block:nth-child(2) {
-  text-align: left; }
-
-footer .wrapper .block li {
+/*footer .wrapper .block:nth-child(2) {
+    text-align: left;
+}*/
+.footer .wrapper .block li {
   /*text-align: center;*/ }
 
-footer .wrapper .block li a {
+.footer .wrapper .block li a {
   color: #fff;
   position: relative;
   line-height: 2em; }
@@ -614,18 +663,67 @@ footer .wrapper .block li a {
     font-weight: bold;
     line-height: 3em;
 }*/
-footer .wrapper .block:last-child {
+.footer .wrapper .block:last-child {
   text-align: center; }
 
-button {
+.button {
   font-size: 16px;
   background: #3f4f88;
   border-radius: 0;
   margin: 2em 0;
   color: #fff;
   padding: 1em 2em;
-  border: none; }
+  border: none;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
 
+.button:hover {
+  background: #000; }
+
+/*.button:before, .button:after {
+    background-color: #ffc107;
+    position: absolute;
+    height: 25%;
+    left: 0%;
+    right: 100%;
+    content: '';
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.button:before {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    bottom: 25%;
+}
+.button:before {
+    bottom: 0%;
+}
+.button:before {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+    bottom: 25%;
+}
+.button:after {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+    bottom: 50%;
+}
+.button:after {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+.button:hover:before, .nav li.current:before, .button:hover:after, .nav li.current:after, .nav li:hover a:before, .nav li.current a:before, .nav li:hover a:after, .nav li.current a:after {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+*/
 /** fadeInLeft **/
 /*@-webkit-keyframes fadeInLeft {
     from {
