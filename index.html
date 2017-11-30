@@ -12,8 +12,8 @@
 		<script src="thirdParty/bxslider/jquery.bxslider.js"></script>
 		<link href="thirdParty/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
-		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+		<!-- <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"> -->
 
 	</head>
 	<body>
@@ -100,19 +100,19 @@
 					</div><!--slider closed-->
 				</div>
 			</section>
-
+			<!-- https://codepen.io/SitePoint/pen/warKXE-->
 			<section class="container">
 				<div class="wrapper">
 					<h2>Why You Need Skippo - Q?</h2>
 					<div class="row">
-						<div class="col animated slideInLeft slideInUp " data-aos="fade-up-right">
+						<div class="col  animatable  slideInLeft ">
 							<div class="cell"><img src="img/other/satisfaction.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
 								<p>Free your customer from standing in queue and frustated</p>
 							</div>
 						</div>
-						<div class="col animated slideInRight slideInUp" data-aos="fade-up-left">
+						<div class="col  animatable slideInRight">
 							<div class="cell"><img src="img/other/skills.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
@@ -121,14 +121,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col animated slideInLeft slideInDown" data-aos="fade-down-right">
+						<div class="col animatable  slideInUp">
 							<div class="cell"><img src="img/other/customer-service.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
 								<p>Free your customer from standing in queue and frustated</p>
 							</div>
 						</div>
-						<div class="col animated slideInRight slideInDown" data-aos="fade-down-left">
+						<div class="col animatable slideInDown">
 							<div class="cell"><img src="img/other/multple-screen.png" /></div>
 							<div class="cell">
 								<h3>Customer Satisfaction</h3>
@@ -140,7 +140,7 @@
 			</section>
 			<!--section -->
 			<section class="container" >
-				<div class="wrapper sign-in" data-aos="slide-up">
+				<div class="wrapper sign-in animation-element  bounce-up">
 					<h2>Start Using Skippo - Q</h2>
 					<div id="sign-in">
 						<!-- This form is submited to the google sheet's script -->
@@ -198,40 +198,46 @@
 				});
 
 				// for aos animation effects
-				AOS.init({
-			        duration: 1000
-			    })  ;
+				// AOS.init({
+			 //        duration: 1000
+			 //    })  ;
+			 /**---**/
+			 
 
 				 // Function which adds the 'animated' class to any '.animatable' in view
-				  // var doAnimations = function() {
-				    
-				    // Calc current offset and get all animatables
-				    // var offset = $(window).scrollTop() + $(window).height(),
-				    //     $animatables = $('.animatable');
-				    
-				    // Unbind scroll handler if we have no animatables
-				    // if ($animatables.size() == 0) {
-				    //   $(window).off('scroll', doAnimations);
-				    // }
-				    
-				    // Check all animatables and animate them if necessary
-						// $animatables.each(function(i) {
-				  //      var $animatable = $(this);
-						// 	if (($animatable.offset().top + $animatable.height() - 20) < offset) {
-				  //       $animatable.removeClass('animatable').addClass('animated');
-						// 	}
-				  //   });
+				  var doAnimations = function() {
+				   // Calc current offset and get all animatables
+					  var offset = $(window).scrollTop() + $(window).height(),
+					  $animatables = $('.animatable');
+					    
+					   // Unbind scroll handler if we have no animatables
+					  if ($animatables.size() == 0) {
+					    $(window).off('scroll', doAnimations);
+					  }
+					    
+					    // Check all animatables and animate them if necessary
+					 	$animatables.each(function(i) {
+					      var $animatable = $(this);
+								if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+					        $animatable.removeClass('animatable').addClass('animated');
+					 	}
+				    });
 
-					// };
+				};
 				  
 				  // Hook doAnimations on scroll, and trigger a scroll
-					// $(window).on('scroll', doAnimations);
-				 //  $(window).trigger('scroll');
+					$(window).on('scroll', doAnimations);
+				   $(window).trigger('scroll');
 				});
 
 
-		// form script
-			function getFormData() {
+
+	
+		
+	</script>
+	<script type="text/javascript">
+			// --> Check https://codepen.io/bramus/pen/vKpjNP
+				function getFormData() {
 			  	var elements = document.getElementById("gform").elements;
 			  	var fields = Object.keys(elements).map(function(k) {
 
@@ -300,13 +306,38 @@
 			};
 
 			document.addEventListener('DOMContentLoaded', loaded, false);
-	</script>
-	<script type="text/javascript">
-			// --> Check https://codepen.io/bramus/pen/vKpjNP
 
 	</script>
 
+			<script>
+				var $animation_elements = $('.animation-element');
+				// var k = [one,two,three,four]
+				var $window = $(window);
+				function check_if_in_view() {
+				  var window_height = $window.height();
+				  var window_top_position = $window.scrollTop();
+				  var window_bottom_position = (window_top_position + window_height);
 
+
+
+				  $.each($animation_elements, function() {
+				    var $element = $(this);
+				    var element_height = $element.outerHeight();
+				    var element_top_position = $element.offset().top;
+				    var element_bottom_position = (element_top_position + element_height);
+
+				    //check to see if this current container is within viewport
+				    if ((element_bottom_position >= window_top_position) &&
+				      (element_top_position <= window_bottom_position)) {
+				      $element.addClass('in-view');
+				    } else {
+				      $element.removeClass('in-view');
+				    }
+				  });
+				}
+				$window.on('scroll resize', check_if_in_view);
+				$window.trigger('scroll');
+		</script>
 		<!-- <script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script> -->
 	</body>
 </html>
