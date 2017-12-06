@@ -1066,6 +1066,10 @@ section {
   text-align: center;
   /* border-top: 0.5em solid #5385c1; */ }
 
+.careers .banner {
+  background-image: url(../img/career.jpg);
+  /* border-top: 0.5em solid #5385c1; */ }
+
 .container .banner {
   width: 100%; }
 
