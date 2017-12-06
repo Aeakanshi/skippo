@@ -6,9 +6,9 @@
 		<title>Skippo-Q</title>
 		<link rel="stylesheet" href="css/global.css">
 		<script src="thirdParty/jquery-1.11.4.min.js"></script>
-		<!-- bxSlider -->
-		<script src="thirdParty/bxslider/jquery.bxslider.js"></script>
-		<link href="thirdParty/bxslider/jquery.bxslider.css" rel="stylesheet" />
+		<!-- maps -->
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		
 	</head>
 	
 	<body>
@@ -36,7 +36,7 @@
 			</section>
 			<!--section -->
 			<section class="container">
-				<div class="wrapper content">
+				<div class="wrapper careers">
 					<!-- <h2>What is Skippo ?</h2> -->
 					<p>Skippo is steroid for any veneue's business. it allows them to manage their operation effectively, while helping them differentiate themselves by creating a delightful experence for their customers.
 					Skippo is steroid for any veneue's business. it allows them to manage their operation effectively, while helping them differentiate themselves by creating a delightful experence for their customers.</p>
@@ -184,14 +184,32 @@
 
 			<section class="container">
 				<div class="wrapper careers">
+					<h2>Location</h2>
+					<div class="row map">
+						<div class="col">
+							<div id="googleMap-left" style="height:300px">
+							</div>
+							<h4>Delhi</h4>
+						</div>
+						<div class="col">
+							<div id="googleMap-right" style="height:300px">
+							</div>
+							<h4>Dehradoon</h4>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="container">
+				<div class="wrapper careers application-process">
 					<h2>Application Process</h2>
 					<p>Send your resume at <a href="mailto:info@skippo.in" target="_top">info@skippo.in</a> with the subject Appl. Java Developer or Front End Developer.</p>
 					<ul>
-						<h4>Ensured folling is answred</h4>
-						<li>-What is your current CTC ?</li>
-						<li>-What is your current CTC ?</li>
-						<li>-What is your current CTC ?</li>
-						<li>-What is your current CTC ?</li>
+						<h4>Ensured following is answred -</h4>
+						<li>What is your current CTC ?</li>
+						<li>What is your current CTC ?</li>
+						<li>What is your current CTC ?</li>
+						<li>What is your current CTC ?</li>
 					</ul>
 				</div>
 			</section>
@@ -219,8 +237,8 @@
 					</ul>
 				</div>
 				<div class="block">
-					<!-- <button class="button" type="submit">Request Demo</button> -->
-					<input type="submit" id=" " class="button" value="Request Demo">
+					<div class="btn-case"><a  class="button" href=" "  >Request Demo </a></div>
+					<!-- <input type="submit" id=" " class="button" value="Request Demo"> -->
 				</div>	
 			</div>
 		</div>
@@ -232,26 +250,6 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-				//bxslide
-				// $('.bxslider').bxSlider();
-				// alert("Hello! I am an alert box!!");
-				$('.bxslider').bxSlider({
-				  nextSelector: '#slider-next',
-				  prevSelector: '#slider-prev',
-				  nextText: '<div class="arrow-up"></div>',
-				  prevText: '<div class="arrow-down"></div>',
-				  pager: false,
-				  auto: false,
-				 stopAutoOnClick: true
-				});
-
-				
-				
- 
-				$( ".slider .bx-wrapper li img" ).click(function() {
-				 	$(this).parents("#modelbox").show();
-				});
-
 				//panel
 				$(".answer").hide();
 				$(".arrow-up").hide();
@@ -261,6 +259,55 @@
 				});
 				
 			});
+		</script>
+		<script type="text/javascript">
+			var map, map2;
+		var myCenter=new google.maps.LatLng(28.439713817027883,77.16796875);
+		var myCenter2=new google.maps.LatLng(30.273300428069934,78.02490234375);
+
+		
+		function initialize()
+		{
+		var mapProp = {
+		  center:myCenter,
+		  zoom:5,
+
+		  // scrollwheel: false,
+		  disableDefaultUI:true,  
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		  };
+		  var mapProp2 = {
+		  center:myCenter,
+		  zoom:5,
+		  draggable: false, 
+		  zoomControl: false,
+		   scrollwheel: false, 
+		   disableDoubleClickZoom: true,
+		  disableDefaultUI:true,  
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		  };
+
+		  map = new google.maps.Map(document.getElementById("googleMap-left"),mapProp);
+		  map2 = new google.maps.Map(document.getElementById("googleMap-right"),mapProp2);
+		  var marker = new google.maps.Marker({
+				position: myCenter,
+				map: map,
+				title: "Delhi",
+			
+				//icon: iconBase + "icon.png"
+			  });
+		  var marker2 = new google.maps.Marker({
+				position: myCenter2,
+				map: map2,
+				title: "Dehradun"
+				//icon: iconBase + "icon.pn"
+			  });
+
+		  google.maps.event.addListener(map, "click", function(event) {
+			placeMarker(event.latLng);
+		  });
+		}
+		google.maps.event.addDomListener(window, "load", initialize);
 		</script>
 		
 		<!-- <script type="text/javascript" src="js/site-common.dev.js" language="javascript"></script> -->

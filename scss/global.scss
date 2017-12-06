@@ -1086,7 +1086,7 @@ section {
     position: relative;
 }
 /*----------------Careers------------*/
-.container .wrapper.content p {
+.container .wrapper.careers p {
     width:100%;
 }
 .container .wrapper.careers p a {
@@ -1096,6 +1096,9 @@ section {
 .container .wrapper.careers h2 {
     color: #89bdd3;
 }
+/*.container .wrapper.careers p {
+    text-align: left;
+}*/
 .container .wrapper.careers .block {
      width: (100%/2);
      min-height:300px;
@@ -1180,6 +1183,22 @@ section {
     border-bottom: 1px solid #4a4a4a29;
 }
 
+.container .wrapper.careers ul {
+    width: 90%;
+    margin: 0 auto;
+}
+.container .wrapper.careers h4 {
+    font-size: 20px;
+    padding: 1em 0;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.container .wrapper.careers li {
+    line-height: 2em;
+    list-style-type: disc;
+    list-style-position: inside;
+}
 /*-----abOUT US------*/
 .container .wrapper .block .circle {
     width: 150px;
