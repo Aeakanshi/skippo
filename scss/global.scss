@@ -185,6 +185,7 @@ h4 {
     /* top: 0; */
     display: block;
     font-size: 1.45em;
+    text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 50px;
     text-shadow: 1px 4px 10px rgba(105, 102, 102, 0.98);
@@ -194,7 +195,7 @@ h4 {
     text-align: center;
 }
 .overlay span h2 {
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 #loader {
@@ -1050,8 +1051,8 @@ section {
     width:100%;
 }
 .container .wrapper p {
-     font-size:1.25em;
-    max-width: 81%;
+    font-size:1.25em;
+    width: 81%;
     color: $grey;
     margin: 0 auto;
     letter-spacing: 1px;
@@ -1067,6 +1068,62 @@ section {
     float: left;
     position: relative;
 }
+
+.container .wrapper.careers .block {
+     width: (100%/2);
+     height:300px;
+}
+.container .wrapper.careers .block p {
+    position: absolute; 
+   top:calc(50% - 1em);/*calc(50% + 5em);  */
+   font-size: 2em;
+   left: 0;
+   text-align: center; 
+   width: 100%; 
+}
+.container .wrapper.careers .row {
+    margin-bottom: 2em;
+}
+
+.container .wrapper.careers li {
+    width: 60%;
+    position: relative;
+}
+
+.container .wrapper.careers li.ur-query {
+    border: 1px solid #4a4a4a29;
+    padding:.5em 1em;
+    list-style-type: decimal;
+    margin: 0 auto 2em auto;
+    list-style-position: inside;
+}
+.container .wrapper.careers li.ur-query .question {
+    position: relative;
+    width: 92%;
+    display: inline-block;
+}
+.tech-stack {
+    width: 100%;
+    text-align: center;
+    background-color: #FFF;
+}
+.tech-stack div {
+    margin: auto;
+}
+.tech-stack img {
+    width: 150px;
+    height: initial;
+    min-width: initial !important;
+    vertical-align: middle;
+    padding-top: 20px;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+
+
+
+
 .container .wrapper .block .circle {
     width: 150px;
     height: 150px;

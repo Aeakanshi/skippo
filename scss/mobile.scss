@@ -1,7 +1,7 @@
 body .mobile{display:block}
 body .desktop{display:none}
 
-body .container #banner.wrapper .block {
+body .container #banner.wrapper .block , body .container .wrapper .block{
     width: 100% !important;
     float: none !important;
     text-align: center !important;
@@ -44,4 +44,14 @@ body .footer .wrapper .block h3:after {
 }
 #outer-wrapper .container .wrapper h2 {
     font-size: 1.5em;
+}
+
+/*--------------About-us-------------*/
+.container .wrapper .inner_content .inner_img {
+    float:none;
+}
+
+#outer-wrapper .container .wrapper p {
+   /* margin: 0;*/
+    width: 100%;
 }
