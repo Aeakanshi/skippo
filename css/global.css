@@ -1068,8 +1068,15 @@ section {
 
 .careers .banner {
   background-image: url(../img/career.jpg);
-  /* border-top: 0.5em solid #5385c1; */ }
+  background-repeat: no-repeat;
+  animation: 15s impact linear infinite;
+  /* margin: -280px 0 0 0;*/ }
 
+@keyframes impact {
+  0% {
+    background-size: 200% 200%, 150% 150%, 100% 100%, 60% 60%, 40% 40%, 20% 20%, 5% 5%; }
+  100% {
+    background-size: 100% 100%, 20% 20%, 40% 40%, 60% 60%, 100% 100%, 150% 150%, 200% 200%; } }
 .container .banner {
   width: 100%; }
 
