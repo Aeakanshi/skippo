@@ -1161,7 +1161,7 @@ section {
 }
 
 .container .wrapper.careers li.ur-query {
-    border: 1px solid #4a4a4a29;
+    border-bottom: 1px dashed #4a4a4a9e;
     padding:.5em 1em;
     list-style-type: decimal;
     margin: 0 auto 2em auto;
@@ -1205,7 +1205,7 @@ section {
 }
 
 .container .wrapper.careers li.ur-query .answer {
-    border-top: 1px dashed;
+    border-top: 0;/*1px dashed;*/
 }
 /*.container .wrapper.careers li.ur-query .answer ul li:nth-child(even) {color: #6d6b6bad;}*/
 
