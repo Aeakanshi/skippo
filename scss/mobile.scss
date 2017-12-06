@@ -55,3 +55,20 @@ body .footer .wrapper .block h3:after {
    /* margin: 0;*/
     width: 100%;
 }
+
+/*-----Careers------*/
+.container .wrapper.content p {
+    font-size: 1.2em;
+    letter-spacing:normal;
+}
+#outer-wrapper .container .wrapper.careers .block {
+    width: 50%;
+    min-height: 100px;
+    margin-bottom: 0;
+}
+#outer-wrapper .container .wrapper.careers .block p {
+    top: 1em;
+    font-size: 1.3em;
+    text-align: left;
+    border-bottom: 1px solid RED;
+}

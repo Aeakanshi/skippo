@@ -691,9 +691,11 @@ section {
 .footer .wrapper .block:last-child {
     text-align: center;
 }
-
+.btn-case {
+     margin: 3em 0;
+}
 .button {
-    font-size: 16px;
+  /*  font-size: 16px;
     background: $blue;
     border-radius: 0;
     margin: 2em 0;
@@ -703,8 +705,23 @@ section {
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
+    transition: all 1s ease;*/
+    font-size: 16px;
+      color: #fff;
+    background: #3f4f88;
+    border-radius: 0;
+   
+    width: 20%;
+    min-width: 100px;
+    text-align: center;
+    padding: .6em 2em;
+    border-radius: 3px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
     transition: all 1s ease;
 }
+
 .button:hover {
     background: #000;
 }
@@ -1068,14 +1085,34 @@ section {
     float: left;
     position: relative;
 }
-
+/*----------------Careers------------*/
+.container .wrapper.content p {
+    width:100%;
+}
+.container .wrapper.careers h2 {
+    color: #89bdd3;
+}
 .container .wrapper.careers .block {
      width: (100%/2);
-     height:300px;
+     min-height:300px;
+     margin-bottom: 5em;
 }
+.container .wrapper.careers .block:nth-child(n) {
+    background-color: #9ad3de;
+}
+
+.container .wrapper.careers .block:nth-child(2n),.container .wrapper.careers .block:nth-child(3n) {
+  background-color:transparent;
+}
+.container .wrapper.careers .block:nth-child(4n) {
+  background-color:#c9c9c9;
+}
+
+
 .container .wrapper.careers .block p {
     position: absolute; 
    top:calc(50% - 1em);/*calc(50% + 5em);  */
+   font-style: italic;
    font-size: 2em;
    left: 0;
    text-align: center; 
@@ -1119,11 +1156,27 @@ section {
     cursor: pointer;
     max-width: 100%;
 }
+.container .wrapper.careers li.ur-query .answer {
+    text-align: center;
+}
+.container .wrapper.careers li.ur-query .answer ul li {
+    margin: 1em auto;
+    text-align: justify;
+    width: 90%;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+.container .wrapper.careers li.ur-query .answer ul li:nth-child(even) {color: #6d6b6bad;}
 
+.container .wrapper.careers li.ur-query .answer .question {
+    width: 50% !important;
+    margin: 3em auto;
+    text-align: left;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #4a4a4a29;
+}
 
-
-
-
+/*-----abOUT US------*/
 .container .wrapper .block .circle {
     width: 150px;
     height: 150px;
