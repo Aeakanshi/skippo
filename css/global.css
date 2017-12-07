@@ -76,7 +76,8 @@
     border-bottom: 1px solid #ff004754; }
 
   #outer-wrapper .container .wrapper.careers li {
-    width: 100%; }
+    width: 100%;
+    list-style-type: none; }
 
   #outer-wrapper .container .wrapper.careers li.ur-query .question {
     width: 100%; } }
