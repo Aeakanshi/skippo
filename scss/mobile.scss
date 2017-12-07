@@ -70,9 +70,12 @@ body .footer .wrapper .block h3:after {
     top: 1em;
     font-size: 1.3em;
    /* text-align: left;*/
-    border-bottom: 1px solid RED;
+    border-bottom: 1px solid #ff004754;
 }
 #outer-wrapper .container .wrapper.careers li {
     width: 100%;
 }
 
+#outer-wrapper .container .wrapper.careers li.ur-query .question {
+    width: 100%;
+}
