@@ -25,6 +25,26 @@ body .container #banner.wrapper .block , body .container .wrapper .block{
     content: " ";
     position: relative;
 }
+#outer-wrapper .bx-wrapper .bx-viewport {
+    height: inherit !important;
+}
+#outer-wrapper .slider .bx-wrapper img {
+    width: 100%;
+}
+#outer-wrapper .slider .bx-wrapper .bx-caption {
+    top: inherit;
+    position: relative;
+    left: inherit;
+    bottom: inherit;
+    /* background: #666; */
+    /* background: transparent; */
+    width: 100%;
+}
+#outer-wrapper .slider .bx-wrapper .bx-caption span {
+    max-width: 100%;
+    letter-spacing: 1px;
+    position: RELATIVE;
+}
 body .footer .wrapper .block {
     width: 100%;
     text-align: center;
